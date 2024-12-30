@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-from src.settings.logger import get_airflow_logger
+from dags.settings.logger import get_airflow_logger
 
 _session_lock = threading.Lock()
 _sessions = {}

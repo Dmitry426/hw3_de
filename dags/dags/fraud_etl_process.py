@@ -7,13 +7,13 @@ from airflow import DAG
 
 from airflow.utils.dates import days_ago
 
-from src.services.db_manarger import create_databases, insert_into_table, truncate_tables_with_ddl, \
+from dags.services.db_manarger import create_databases, insert_into_table, truncate_tables_with_ddl, \
     query_from_schema, handle_scd2_updates, join_stg_and_dim_data
-from src.services.validators.fraud_validators import fraud_validators
-from src.services.connections.s3.connection import get_s3_hook
-from src.settings.bank_etl.fraud_etl_settings import Config
-from src.settings.logger import get_airflow_logger
-from src.test import PROJECT_ROOT
+from dags.services.validators.fraud_validators import fraud_validators
+from dags.services.connections.s3.connection import get_s3_hook
+from dags.settings.bank_etl.fraud_etl_settings import Config
+from dags.settings.logger import get_airflow_logger
+from dags.test import PROJECT_ROOT
 
 LOG = get_airflow_logger(__name__)
 

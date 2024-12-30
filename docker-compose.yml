@@ -12,7 +12,7 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
   volumes:
     - ./configs:/opt/airflow/configs
-    - ./src:/opt/airflow/src
+    - ./dags:/opt/airflow/dags
     - airflow_logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
   user: "${AIRFLOW_UID:-50000}:0"

@@ -3,7 +3,7 @@ __all__ = "fraud_validators"
 from io import BytesIO
 import polars as pl
 
-from src.settings.logger import get_airflow_logger
+from dags.settings.logger import get_airflow_logger
 
 LOG = get_airflow_logger(__name__)
 

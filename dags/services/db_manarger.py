@@ -3,9 +3,9 @@ from typing import Dict, Any, List
 
 from sqlalchemy import MetaData, Table, and_
 
-from src.services.connections.postgres.connection import get_session
-from src.services.save_file_loader import load_sql_script
-from src.settings.logger import get_airflow_logger
+from dags.services.connections.postgres.connection import get_session
+from dags.services.save_file_loader import load_sql_script
+from dags.settings.logger import get_airflow_logger
 
 LOG = get_airflow_logger(__name__)
 
