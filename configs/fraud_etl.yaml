@@ -1,0 +1,44 @@
+minio:
+  s3_connection: "s3_connection"
+  bucket_name: "fraud"
+  file_templates:
+    transactions: "transactions_{date}.txt"
+    passport_blacklist: "passport_blacklist_{date}.xlsx"
+    terminals: "terminals_{date}.xlsx"
+  # Date could be a list if no target dates current date is used
+  files_date_format: "%d%m%Y"
+  target_dates:
+    - "2021-03-01"
+db:
+  target_database: "pg_hse"
+  intermediate_database: "pg_connection_local"
+
+stg:
+  ddl: "ddl_stg.sql"
+  db_schema : "public"
+  truncate_ddl: "ddl_truncate_stg.sql"
+  stg_blacklist_name: "stg_passport_blacklist"
+  stg_terminals_name: 'stg_terminals'
+  stg_accounts_name: "stg_accounts"
+  stg_cards_name: "stg_cards"
+  stg_clients_name: "stg_clients"
+  stg_transactions_name: "stg_transactions"
+
+dim:
+  ddl: "ddl_dim.sql"
+  db_schema: "public"
+  dim_terminals_name: 'dim_terminals'
+  dim_accounts_name: "dim_accounts"
+  dim_cards_name: "dim_cards"
+  dim_clients_name: "dim_clients"
+
+fact:
+  ddl: "ddl_fact.sql"
+  db_schema: "public"
+  fact_transactions_name: "fact_transactions"
+  fact_passport_blacklist: "fact_passport_blacklist"
+
+report:
+  ddl : "ddl_report.sql"
+  db_schema: "public"
+  rep_fraud_name: "rep_fraud"
