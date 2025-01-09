@@ -13,7 +13,7 @@ from botocore.exceptions import (
     ParamValidationError,
 )
 
-from src.settings.logger import get_airflow_logger
+from dags.settings.logger import get_airflow_logger
 
 logger = get_airflow_logger(__name__)
 
