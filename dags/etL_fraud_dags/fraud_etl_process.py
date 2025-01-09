@@ -33,7 +33,7 @@ dag = DAG(
     catchup=False,
     start_date=days_ago(2),
     default_args=DEFAULT_ARGS,
-    schedule_interval="@once",
+    schedule_interval="@daily",
 )
 
 
