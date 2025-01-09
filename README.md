@@ -1,5 +1,6 @@
 # hse_mlops airflow 
 Airflow stack postgres and localstack .
+- [MlAirflow_setup_original_template](https://github.com/Dmitry426/Yandex_bootcamp_airflow_template)
 
 ## Minimum Requirements
 This project supports Ubuntu Linux 18.04 and up. 

@@ -41,6 +41,7 @@ def get_engine(conn_id: str) -> Engine:
     :param conn_id: The Airflow connection ID.
     :return: An SQLAlchemy Engine.
     """
+    logger.info(f"Session started for connection ID: {conn_id}")
     db_hook = BaseHook.get_hook(conn_id=conn_id)
     engine = create_engine(db_hook.get_uri())
     return engine
@@ -66,7 +67,9 @@ def get_session(conn_id: str):
     with _session_lock:
         if conn_id not in _sessions:
             engine = get_engine(conn_id)
-            session_factory = sessionmaker(bind=engine, autocommit=False, autoflush=True)
+            session_factory = sessionmaker(
+                bind=engine, autocommit=False, autoflush=True
+            )
             _sessions[conn_id] = scoped_session(session_factory)
 
     session = _sessions[conn_id]()

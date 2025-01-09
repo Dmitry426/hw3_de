@@ -12,7 +12,7 @@ from sklearn.datasets import fetch_california_housing
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 
-from src.settings.logger import get_airflow_logger
+from dags.settings.logger import get_airflow_logger
 
 logger = get_airflow_logger(__name__)
 
