@@ -1,4 +1,4 @@
-# hse_mlops airflow 
+# De final project
 Airflow stack postgres and localstack .
 - [MlAirflow_setup_original_template](https://github.com/Dmitry426/Yandex_bootcamp_airflow_template)
 
